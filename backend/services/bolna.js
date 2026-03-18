@@ -53,7 +53,7 @@ async function triggerOutboundCall(lead) {
     return triggerMockCall(lead);
   }
 
-  const response = await fetch('https://api.bolna.dev/call', {
+  const response = await fetch('https://api.bolna.ai/call', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ async function triggerOutboundCall(lead) {
   }
 
   const data = await response.json();
-  return data.call_id || data.id;
+  return data.execution_id || data.call_id || data.id;
 }
 
 function triggerMockCall(lead) {
