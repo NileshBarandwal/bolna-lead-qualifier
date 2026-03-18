@@ -52,7 +52,7 @@ router.get('/', (req, res) => {
   try {
     const db = getDb();
     const leads = db.prepare(
-      `SELECT id, name, email, phone, company, use_case, call_id, call_status, qualification, created_at, updated_at
+      `SELECT id, name, email, phone, company, use_case, call_id, call_status, qualification, transcript, created_at, updated_at
        FROM leads
        ORDER BY created_at DESC`
     ).all();
