@@ -7,4 +7,6 @@ __pycache__/
 dist/
 .next/
 *.db
+*.db-shm
+*.db-wal
 *.sqlite
