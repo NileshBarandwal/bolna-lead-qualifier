@@ -21,6 +21,17 @@ Agent qualifies lead → Webhook updates DB → Dashboard shows result
 - **Backend:** Node.js, Express, SQLite
 - **Voice AI:** Bolna ([platform.bolna.ai](https://platform.bolna.ai))
 
+## Mock Mode (Demo without a phone)
+
+`MOCK_BOLNA=true` simulates the Bolna outbound call flow locally. When enabled:
+
+- Submitting a lead instantly returns a fake `call_id`
+- After **10 seconds**, the backend simulates a webhook callback internally
+- The lead is automatically scored **Hot / Warm / Cold** with a realistic transcript
+- The dashboard updates on its 15-second poll cycle
+
+Set `MOCK_BOLNA=false` and add real `BOLNA_API_KEY` / `BOLNA_AGENT_ID` credentials to trigger actual phone calls via the Bolna platform.
+
 ## Local Setup
 
 ### Prerequisites
@@ -31,7 +42,7 @@ Agent qualifies lead → Webhook updates DB → Dashboard shows result
 
 ```bash
 # 1. Clone the repository
-git clone <repo-url>
+git clone https://github.com/NileshBarandwal/bolna-lead-qualifier.git
 cd bolna-lead-qualifier
 
 # 2. Install backend dependencies
@@ -43,22 +54,21 @@ cd ../frontend
 npm install
 
 # 4. Configure environment variables
-cp ../.env.example .env
-# Edit .env with your actual values
-
-# 5. Initialize the database
 cd ../backend
-node db/init.js
+cp ../.env.example .env
+# For a local demo, MOCK_BOLNA=true is already set — no API keys needed
 
-# 6. Start the backend (in one terminal)
+# 5. Start the backend (Terminal 1)
 npm run dev
 
-# 7. Start the frontend (in another terminal)
+# 6. Start the frontend (Terminal 2)
 cd ../frontend
 npm run dev
 ```
 
 The frontend runs at http://localhost:3000 and the backend at http://localhost:3001.
+
+Open http://localhost:3000 to submit a lead, then watch http://localhost:3000/dashboard update within ~15 seconds.
 
 ## Bolna Agent Configuration
 
