@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: bolna-lead-qualifier-backend
+    runtime: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: PORT
+        value: 3001
+      - key: DATABASE_PATH
+        value: /tmp/leads.db
+      - key: MOCK_BOLNA
+        value: false
+      - key: BOLNA_API_KEY
+        sync: false
+      - key: BOLNA_AGENT_ID
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
