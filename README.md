@@ -1,5 +1,9 @@
 # AI Lead Qualification Voice Agent
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-bolna--lead--qualifier.vercel.app-brightgreen?style=flat-square&logo=vercel)](https://bolna-lead-qualifier.vercel.app)
+[![GitHub commits](https://img.shields.io/github/commit-activity/t/NileshBarandwal/bolna-lead-qualifier?style=flat-square&logo=github)](https://github.com/NileshBarandwal/bolna-lead-qualifier/commits/main)
+[![Node.js](https://img.shields.io/badge/Node.js-20.x-339933?style=flat-square&logo=node.js)](https://nodejs.org)
+
 ## Problem
 
 Sales teams waste hours manually calling and qualifying inbound leads from web forms. Most leads are low-intent, and SDRs spend 70% of their time on leads that never convert — leaving high-value prospects waiting and pipeline data stale.
@@ -7,6 +11,16 @@ Sales teams waste hours manually calling and qualifying inbound leads from web f
 ## Solution
 
 This app automates outbound lead qualification using a Voice AI agent built on Bolna's platform. When a lead submits a form, the system immediately triggers a personalized phone call. The AI agent asks 4–5 qualifying questions, extracts structured data from the conversation, and automatically scores each lead as Hot, Warm, or Cold — without any human SDR involvement.
+
+## Assignment Overview — Bolna FSE (Full Stack Engineer)
+
+| Objective | Status | Details |
+|---|---|---|
+| 1. Enterprise Use Case | ✅ | AI-powered outbound lead qualification |
+| 2. Voice AI Agent on Bolna | ✅ | Agent "Aria" built on platform.bolna.ai |
+| 3. Web App | ✅ | Next.js 14 frontend + Express backend |
+| 4. Full Flow Demo | ✅ | Form → Agent → Webhook → Dashboard |
+| 5. Submission | ✅ | GitHub + Vercel + Screen recording |
 
 ## Architecture
 
@@ -35,7 +49,7 @@ Set `MOCK_BOLNA=false` and add real `BOLNA_API_KEY` / `BOLNA_AGENT_ID` credentia
 ## Local Setup
 
 ### Prerequisites
-- Node.js 18+
+- Node.js 20+
 - npm or yarn
 
 ### Steps
@@ -86,6 +100,14 @@ Open http://localhost:3000 to submit a lead, then watch http://localhost:3000/da
 3. Copy the Agent ID and add it to your `.env` as `BOLNA_AGENT_ID`.
 4. Generate an API key from the dashboard and add it as `BOLNA_API_KEY`.
 5. Set your webhook URL to: `https://<your-backend-url>/webhook/bolna`
+
+## Qualification Scoring
+
+| Score | Criteria | Action |
+|---|---|---|
+| 🔴 Hot | Budget confirmed + Decision maker + Timeline < 3 months | Immediate follow-up |
+| 🟡 Warm | 2 of the above criteria met | Nurture within 48 hours |
+| 🔵 Cold | No budget or no clear timeline | Long-term nurture campaign |
 
 ## API Reference
 
