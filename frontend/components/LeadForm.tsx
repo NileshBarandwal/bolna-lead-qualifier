@@ -101,7 +101,7 @@ export default function LeadForm() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h2 className="text-xl font-semibold text-slate-900 mb-2">You're all set!</h2>
+          <h2 className="text-xl font-semibold text-slate-900 mb-2">You&apos;re all set!</h2>
           <p className="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">
             Thanks! Our AI agent will call you within a few minutes to learn more about your needs.
           </p>
