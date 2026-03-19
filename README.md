@@ -163,4 +163,6 @@ Receive call completion data from Bolna. Updates lead qualification and transcri
 
 ## Demo
 
-[Add deployed link or screen recording link here]
+- **Frontend (Live):** https://bolna-lead-qualifier.vercel.app
+- **Backend API (Live):** https://bolna-lead-qualifier.onrender.com
+- **GitHub:** https://github.com/NileshBarandwal/bolna-lead-qualifier
